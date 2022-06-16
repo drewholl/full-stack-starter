@@ -2,4 +2,32 @@
 
 body {
   padding-top: 5rem;
+  background-color: black;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+}
+
+h4 {
+  text-align: center;
+  color: white;
+  padding-bottom: 5rem;
+}
+
+.card {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 40px;
+}
+
+div.end {
+  text-align: center;
+  font-size: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: white;
 }

@@ -32,9 +32,7 @@ function Header() {
   return (
     <nav className="header navbar navbar-expand-md navbar-light bg-light fixed-top">
       <div className="container">
-        <Link className="navbar-brand" to="/">
-          Full Stack Starter
-        </Link>
+        <Link className="navbar-brand" to="/"></Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -49,7 +47,12 @@ function Header() {
           <ul className="navbar-nav flex-grow-1 mb-2 mb-md-0">
             <li className="nav-item active">
               <Link className="nav-link" aria-current="page" to="/">
-                Home
+                List View
+              </Link>
+            </li>
+            <li className="nav-item active">
+              <Link className="nav-link" aria-current="page" to="/">
+                Map View
               </Link>
             </li>
             <div className="flex-grow-1 d-flex justify-content-end">
