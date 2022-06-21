@@ -51,7 +51,7 @@ function Header() {
               </Link>
             </li>
             <li className="nav-item active">
-              <Link className="nav-link" aria-current="page" to="/">
+              <Link className="nav-link" aria-current="page" to="map">
                 Map View
               </Link>
             </li>
