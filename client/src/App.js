@@ -5,6 +5,7 @@ import './App.scss';
 import { AuthContextProvider, AuthProtected } from './AuthContext';
 import Header from './Header';
 import Home from './Home';
+import Detail from './Detail';
 import Login from './Login';
 import Map from './Map';
 import PasswordRoutes from './Passwords/PasswordRoutes';
@@ -18,6 +19,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/detail/:id" element={<Detail />} />
           <Route path="/login" element={<Login />} />
           <Route path="/map" element={<Map />} />
           <Route path="/passwords/*" element={<PasswordRoutes />} />

@@ -20,7 +20,7 @@ function Home() {
       <h4>List View</h4>
       <div>
         {items.map((item) => (
-          <Park title={item.fields.Name} text={item.fields.Address} image={item.fields.Pictures[0].url} />
+          <Park id={item.id} title={item.fields.Name} text={item.fields.Address} image={item.fields.Pictures[0].url} />
         ))}
       </div>
       <div className="end">
