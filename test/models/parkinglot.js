@@ -10,15 +10,15 @@ describe('models.ParkingLot', () => {
 
   it('creates a new ParkingLot record', async () => {
     let parkinglot = models.ParkingLot.build({
-      Title: 'Test Title',
-      Text: 'This is longer test Text.',
+      Name: 'Test Title',
+      Address: 'This is longer test Text.',
     });
     assert.deepStrictEqual(parkinglot.id, null);
     await parkinglot.save();
     assert(parkinglot.id);
 
     parkinglot = await models.ParkingLot.findByPk(parkinglot.id);
-    assert.deepStrictEqual(parkinglot.Title, 'Test Title');
-    assert.deepStrictEqual(parkinglot.Text, 'This is text');
+    assert.deepStrictEqual(parkinglot.Name, 'Test Title');
+    assert.deepStrictEqual(parkinglot.Address, 'This is longer test Text.');
   });
 });
