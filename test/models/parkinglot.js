@@ -5,7 +5,7 @@ const models = require('../../models');
 
 describe('models.ParkingLot', () => {
   beforeEach(async () => {
-    await helper.loadFixtures(['parkinglot']);
+    await helper.loadFixtures(['parkinglots']);
   });
 
   it('creates a new ParkingLot record', async () => {
