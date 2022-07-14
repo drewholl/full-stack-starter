@@ -13,4 +13,13 @@ router.get('/', async (req, res) => {
   res.json(records.map((r) => r.toJSON()));
 });
 
+router.get('/:id', async (req, res) => {
+  const record = await models.ParkingLot.findByPk(req.params.id);
+  if (record) {
+    res.json(record.toJSON());
+  } else {
+    res.status(HttpStatus.NOT_FOUND).end();
+  }
+});
+
 module.exports = router;

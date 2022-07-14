@@ -21,4 +21,17 @@ describe('/api/parkinglots', () => {
       assert.deepStrictEqual(parkinglots.length, 2);
     });
   });
+
+  describe('GET /:id', () => {
+    it('returns one ParkingLot by id', async () => {
+      const response = await testSession.get('/api/parkinglots/2').expect(HttpStatus.OK);
+      const parkinglot = response.body;
+      assert.deepStrictEqual(parkinglot.Name, 'Test fixture 2.');
+      assert.deepStrictEqual(parkinglot.Address, 'This is test fixture 2 long address.');
+    });
+
+    it('returns NOT FOUND for an id not in the database', async () => {
+      await testSession.get('/api/parkinglots/0').expect(HttpStatus.NOT_FOUND);
+    });
+  });
 });

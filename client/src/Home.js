@@ -17,8 +17,8 @@ function Home() {
   return (
     <main className="container">
       <h1>San Francisco Public Parking</h1>
-      <h4>List View</h4>
-      <div>
+      <h4 className="header">List View</h4>
+      <div className="row">
         {items.map((item) => (
           <Park id={item.id} title={item.fields.Name} text={item.fields.Address} image={item.fields.Pictures[0].url} />
         ))}

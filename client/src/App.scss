@@ -12,7 +12,7 @@ h1 {
   padding-bottom: 5rem;
 }
 
-h4 {
+h4.header {
   text-align: center;
   color: white;
   padding-bottom: 5rem;
@@ -30,4 +30,9 @@ div.end {
   padding-top: 20px;
   padding-bottom: 20px;
   background: white;
+}
+
+#space {
+  width: 60%;
+  height: 60%;
 }

@@ -11,8 +11,8 @@
     "model": "ParkingLot",
     "data": {
       "id": 2,
-      "Name": "Test fixture 1",
-      "Address": "This is test fixture 1 long address."
+      "Name": "Test fixture 2.",
+      "Address": "This is test fixture 2 long address."
     }
   }
 ]

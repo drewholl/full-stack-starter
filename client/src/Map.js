@@ -11,7 +11,7 @@ function Map() {
   return (
     <main className="container">
       <h1>San Francisco Public Parking</h1>
-      <h4>Map View</h4>
+      <h4 className="header">Map View</h4>
       <div className="end">
         <a
           href="https://www.sfmta.com/garages-lots?field_garage_services_value=All&field_neighborhoods_target_id=All&field_parking_type_value=All#views-exposed-form-garage-map-block"
