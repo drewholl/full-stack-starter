@@ -15,10 +15,10 @@ module.exports = (sequelize, DataTypes) => {
     {
       Name: DataTypes.STRING,
       Address: DataTypes.STRING,
-      PhoneNumber: DataTypes.STRING,
+      Phone_Number: DataTypes.STRING,
       Type: DataTypes.STRING,
-      Hours: DataTypes.STRING,
-      Rate: DataTypes.DECIMAL,
+      Hours_Open: DataTypes.STRING,
+      Hourly_Rate: DataTypes.STRING,
       Pictures: DataTypes.STRING,
     },
     {

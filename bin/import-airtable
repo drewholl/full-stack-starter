@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+'use strict';
+
+const fetch = require('node-fetch');
+
+const models = require('../models');
+
+fetch(`https://api.airtable.com/v0/apphJNExV9uurOwBp/Parking?api_key=keyKRzWAPS1yLYnFH`)
+  .then((response) => response.json())
+  .then(async (data) => {
+    for (const record of data.records) {
+      const { fields } = record;
+      const parkinglot = models.ParkingLot.build({
+        Name: fields.Name,
+        Address: fields.Address,
+        Pictures: fields.Pictures?.[0]?.url,
+        Phone_Number: fields.Phone_Number,
+        Type: fields.Type,
+        Hours_Open: fields.Hours_Open,
+        Hourly_Rate: fields.Hourly_Rate,
+      });
+      await parkinglot.save();
+    }
+  });

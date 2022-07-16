@@ -5,13 +5,9 @@ function Home() {
   const [items, setItems] = useState([]);
 
   useEffect(function () {
-    const request = fetch('https://api.airtable.com/v0/apphJNExV9uurOwBp/Parking?api_key=keyKRzWAPS1yLYnFH');
-    request
+    fetch('/api/parkinglots')
       .then((response) => response.json())
-      .then((data) => {
-        setItems(data.records);
-        console.log(data);
-      });
+      .then((data) => setItems(data));
   }, []);
 
   return (
@@ -20,7 +16,7 @@ function Home() {
       <h4 className="header">List View</h4>
       <div className="row">
         {items.map((item) => (
-          <Park id={item.id} title={item.fields.Name} text={item.fields.Address} image={item.fields.Pictures[0].url} />
+          <Park id={item.id} title={item.Name} text={item.Address} image={item.Pictures} />
         ))}
       </div>
       <div className="end">

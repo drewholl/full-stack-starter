@@ -14,17 +14,17 @@ module.exports = {
       Address: {
         type: Sequelize.STRING,
       },
-      PhoneNumber: {
+      Phone_Number: {
         type: Sequelize.STRING,
       },
       Type: {
         type: Sequelize.STRING,
       },
-      Hours: {
+      Hours_Open: {
         type: Sequelize.STRING,
       },
-      Rate: {
-        type: Sequelize.DECIMAL,
+      Hourly_Rate: {
+        type: Sequelize.STRING,
       },
       Pictures: {
         type: Sequelize.STRING,
