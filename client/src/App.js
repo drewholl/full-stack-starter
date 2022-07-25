@@ -6,6 +6,7 @@ import { AuthContextProvider, AuthProtected } from './AuthContext';
 import Header from './Header';
 import Home from './Home';
 import Detail from './Detail';
+import ParkingLotForm from './ParkingLotForm';
 import Login from './Login';
 import Map from './Map';
 import PasswordRoutes from './Passwords/PasswordRoutes';
@@ -19,6 +20,22 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route
+            path="/detail/new"
+            element={
+              <AuthProtected isAdminRequired={true}>
+                <ParkingLotForm />
+              </AuthProtected>
+            }
+          />
+          <Route
+            path="/detail/:id/edit"
+            element={
+              <AuthProtected isAdminRequired={true}>
+                <ParkingLotForm />
+              </AuthProtected>
+            }
+          />
           <Route path="/detail/:id" element={<Detail />} />
           <Route path="/login" element={<Login />} />
           <Route path="/map" element={<Map />} />

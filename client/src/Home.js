@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+import { useAuthContext } from './AuthContext';
 import Park from './Item';
 
 function Home() {
+  const { user } = useAuthContext();
   const [items, setItems] = useState([]);
 
   useEffect(function () {
@@ -14,6 +18,15 @@ function Home() {
     <main className="container">
       <h1>San Francisco Public Parking</h1>
       <h4 className="header">List View</h4>
+      {user?.isAdmin && (
+        <div class="text-center">
+          <p>
+            <Link to="/detail/new" className="btn btn-light">
+              New Parking Lot
+            </Link>
+          </p>
+        </div>
+      )}
       <div className="row">
         {items.map((item) => (
           <Park id={item.id} title={item.Name} text={item.Address} image={item.Pictures} />

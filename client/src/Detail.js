@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { useAuthContext } from './AuthContext';
 
 function Detail() {
   const { id } = useParams();
 
+  const { user } = useAuthContext();
   const [data, setData] = useState();
 
   useEffect(
@@ -21,6 +23,13 @@ function Detail() {
     <main className="container">
       <h1>San Francisco Public Parking</h1>
       <h4 className="header">Detail View</h4>
+      {user?.isAdmin && (
+        <p>
+          <Link to="edit" className="btn btn-primary">
+            Edit
+          </Link>
+        </p>
+      )}
       <div className="detail">
         <div className="card mb-3" id="space">
           <img src={data?.Pictures} class="card-img-top" alt="..." />

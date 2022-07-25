@@ -36,6 +36,23 @@ const Api = {
       return instance.post('/api/auth/register', data);
     },
   },
+  parkinglots: {
+    index() {
+      return instance.get('/api/parkinglots');
+    },
+    get(id) {
+      return instance.get(`/api/parkinglots/${id}`);
+    },
+    create(data) {
+      return instance.post('/api/parkinglots', data);
+    },
+    update(id, data) {
+      return instance.patch(`/api/parkinglots/${id}`, data);
+    },
+    delete(id) {
+      return instance.delete(`/api/parkinglots/${id}`);
+    },
+  },
   passwords: {
     reset(email) {
       return instance.post('/api/passwords', { email });
